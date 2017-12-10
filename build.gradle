@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+jar {
+    baseName = 'github-top-contributors'
+    version =  '0.1.0'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    testCompile group: 'org.hamcrest', name: 'hamcrest-junit', version: '2.0.0.0'
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '2.25.1'
+    compile group: 'javax.annotation', name: 'javax.annotation-api', version: '1.3.1'
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1'
+    compile group: 'org.glassfish.hk2', name: 'osgi-resource-locator', version: '2.5.0-b42'
+    compile group: 'org.glassfish.hk2.external', name: 'javax.inject', version: '2.5.0-b60'
+    testCompile 'junit:junit:4.12'
+}
+
+sourceSets {
+    test {
+        java.srcDir(fileTree(dir: 'src/test/java').matching { include 'topcontributors/*' })
+    }
+}
