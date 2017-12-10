@@ -4,9 +4,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-final public class JSONStringValidator {
+final class JSONStringValidator {
 
-    public static Boolean isValid(String test) {
+    static Boolean isValid(String test) {
         try {
             new JSONObject(test);
         } catch (JSONException ex) {

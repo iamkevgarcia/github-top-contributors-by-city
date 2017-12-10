@@ -1,6 +1,5 @@
 package com.topcontributors;
 
-import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,11 +9,11 @@ import static com.topcontributors.JSONStringValidator.isValid;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
-public class GitHubContributorApiConsumerShould {
+public class PageSizeUpTo100ContributorApiConsumer {
 
     @Test
     public void return_users_top_contributors_from_given_city() {
-        GitHubContributorApiConsumer apiConsumer = new GitHubContributorApiConsumer(ClientBuilder.newClient());
+        PageSizeUpTo100ApiConsumer apiConsumer = new PageSizeUpTo100ApiConsumer(ClientBuilder.newClient());
 
         String topContributorsResponse = apiConsumer.getByCity("barcelona", 1).readEntity(String.class);
 
