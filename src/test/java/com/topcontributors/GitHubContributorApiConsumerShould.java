@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 public class GitHubContributorApiConsumerShould {
 
     @Test
-    public void return_json_object_when_valid_json_string_was_given() {
+    public void return_users_top_contributors_from_given_city() {
         GitHubContributorApiConsumer apiConsumer = new GitHubContributorApiConsumer(ClientBuilder.newClient());
 
         Response topContributorsResponse = apiConsumer.getByCity("barcelona", 1);
