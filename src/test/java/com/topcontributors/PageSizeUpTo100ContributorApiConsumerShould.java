@@ -9,15 +9,15 @@ import static com.topcontributors.JSONStringValidator.isValid;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
-public class PageSizeUpTo100ContributorApiConsumer {
+public class PageSizeUpTo100ContributorApiConsumerShould {
 
     @Test
     public void return_users_top_contributors_from_given_city() {
         PageSizeUpTo100ApiConsumer apiConsumer = new PageSizeUpTo100ApiConsumer(ClientBuilder.newClient());
 
-        String topContributorsResponse = apiConsumer.getByCity("barcelona", 1).readEntity(String.class);
+        String topContributorsResponse = apiConsumer.getByCity("barcelona", 1);
 
         assertThat("Api consumer returns json response", topContributorsResponse, is(not(emptyString())));
-        Assert.assertThat("response is valid json", isValid(topContributorsResponse), is(true));
+        assertThat("response is valid json", isValid(topContributorsResponse), is(true));
     }
 }

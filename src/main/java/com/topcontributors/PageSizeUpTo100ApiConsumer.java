@@ -14,13 +14,14 @@ public final class PageSizeUpTo100ApiConsumer implements ContributorApiConsumer 
         this.client = client;
     }
 
-    public Response getByCity(String cityName, Integer size) {
+    public String getByCity(String cityName, Integer size) {
         return client
                 .target(REST_URI)
                 .queryParam("q", "location:" + cityName)
                 .queryParam("size", size)
                 .queryParam("order", "asc")
                 .request(MediaType.APPLICATION_JSON)
-                .get();
+                .get()
+                .readEntity(String.class);
     }
 }

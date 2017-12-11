@@ -27,6 +27,7 @@ dependencies {
     compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1'
     compile group: 'org.glassfish.hk2', name: 'osgi-resource-locator', version: '2.5.0-b42'
     compile group: 'org.glassfish.hk2.external', name: 'javax.inject', version: '2.5.0-b60'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
     testCompile 'junit:junit:4.12'
 }
 
